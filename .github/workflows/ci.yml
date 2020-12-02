@@ -12,8 +12,8 @@ jobs:
       - uses : actions/setup-node@v1
         with : 
           node-versions: '14'
-      - uses : npm ci
-      - uses : npm run build
-      - uses : npm run test
+      - run : npm ci
+      - run : npm run build
+      - run : npm run test
         env:
           CI: true
