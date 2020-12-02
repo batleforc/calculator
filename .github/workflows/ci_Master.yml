@@ -2,8 +2,7 @@ name: ci master
 on:
   push:
     branches:
-      - "**"
-      - "!master"
+      - "master"
 
 jobs:
   ci-master: 
@@ -16,5 +15,6 @@ jobs:
       - run : npm ci
       - run : npm run build
       - run : npm run test
+      - uses : jamesives/github-pages-deploy-action@3.7.1
         env:
           CI: true
